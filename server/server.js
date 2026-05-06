@@ -2,7 +2,7 @@ const express = require('express');
 
 const connectDB = require('./config/db.js');
 
-const {PORT} = require('./config/env.js')
+const { PORT } = require('./config/env.js')
 
 const app = express();
 
@@ -16,11 +16,10 @@ app.use(express.json());
 
 
 
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
 
-app.listen(PORT, ()=> ){
-    console.log(`server running on Port ${PORT}`);
-    
-};
 
 
 
