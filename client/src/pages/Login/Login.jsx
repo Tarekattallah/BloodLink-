@@ -10,7 +10,7 @@ import api from '../../component/api';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false)
-  const [identifier, setIdentifier] = useState('')
+  const [Email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const navigate = useNavigate()
@@ -21,7 +21,7 @@ export default function Login() {
     e.preventDefault()
     setError(null)
 
-    if (!identifier.trim() || !password.trim()) {
+    if (!Email.trim() || !password.trim()) {
       setError('Please enter your email or donor ID and password.')
       return
     }
@@ -29,7 +29,7 @@ export default function Login() {
     try {
       setIsSubmitting(true)
       const response = await api.post("users/login", {
-        Username: identifier.trim(),
+        Username: Email.trim(),
         PasswordHash: password,
       })
 
@@ -74,7 +74,7 @@ export default function Login() {
       </div>
 
       <div className={`col-12 col-md-7 d-flex align-items-center justify-content-center ${Style.rightside}`}>
-        
+
       <form onSubmit={handleSubmit}>
           <div className={Style.rightContainer}>
           <h1 className={Style.title}>Login</h1>
@@ -82,7 +82,7 @@ export default function Login() {
 
           <label className={Style.fieldLabel} htmlFor="emailInput">Email or Donor ID</label>
           <div className={Style.input}>
-            <input type="text" placeholder="Email or Donor ID" id="emailInput" value={identifier} onChange={(e) => setIdentifier(e.target.value)}/>
+            <input type="text" placeholder="Email or Donor ID" id="emailInput" value={Email} onChange={(e) => setEmail(e.target.value)}/>
             <span className={Style.icon}>
               <FontAwesomeIcon icon={faEnvelope} className={Style.inputIcon} />
             </span>
