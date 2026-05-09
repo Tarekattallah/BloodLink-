@@ -1,12 +1,54 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faLock, faRightToBracket, faSuitcaseMedical } from '@fortawesome/free-solid-svg-icons'
 import { faCircleUser } from '@fortawesome/free-regular-svg-icons'
+import { UseAuth } from '../../component/context/authContext'
 import login from '../../assets/Login.png'
 import Style from './Login.module.css'
+import api from '../../component/api';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false)
+  const [identifier, setIdentifier] = useState('')
+  const [password, setPassword] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const navigate = useNavigate()
+  const [error, setError] = useState(null)
+  const { Login } = UseAuth()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setError(null)
+
+    if (!identifier.trim() || !password.trim()) {
+      setError('Please enter your email or donor ID and password.')
+      return
+    }
+
+    try {
+      setIsSubmitting(true)
+      const response = await api.post("users/login", {
+        Username: identifier.trim(),
+        PasswordHash: password,
+      })
+
+      if (response.data) {
+        Login(response.data.user)
+        localStorage.setItem("token", response.data.token)
+
+        if (response.data.user.Role === "Admin") {
+          navigate('/')
+        }
+      }
+    } catch (error) {
+      setError(error.response?.data?.msg || 'Login failed. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+
 
   return (
     <div className={`d-flex ${Style.main}`}>
@@ -32,13 +74,15 @@ export default function Login() {
       </div>
 
       <div className={`col-12 col-md-7 d-flex align-items-center justify-content-center ${Style.rightside}`}>
-        <div className={Style.rightContainer}>
+        
+      <form onSubmit={handleSubmit}>
+          <div className={Style.rightContainer}>
           <h1 className={Style.title}>Login</h1>
           <p className={Style.loginsub}>Login to your account to manage your donations.</p>
 
           <label className={Style.fieldLabel} htmlFor="emailInput">Email or Donor ID</label>
           <div className={Style.input}>
-            <input type="text" placeholder="Email or Donor ID" id="emailInput" />
+            <input type="text" placeholder="Email or Donor ID" id="emailInput" value={identifier} onChange={(e) => setIdentifier(e.target.value)}/>
             <span className={Style.icon}>
               <FontAwesomeIcon icon={faEnvelope} className={Style.inputIcon} />
             </span>
@@ -50,19 +94,22 @@ export default function Login() {
           </div>
 
           <div className={Style.input}>
-            <input type={showPassword ? 'text' : 'password'} placeholder="........" id="pwInput" defaultValue="password"/>
+            <input type={showPassword ? 'text' : 'password'} placeholder="........" id="pwInput" value={password} onChange={(e) => setPassword(e.target.value)}/>
+
             <button type="button" className={Style.icon} title="Show/hide password" onClick={() => setShowPassword((current) => !current)} >
               <FontAwesomeIcon icon={faLock} className={Style.inputIcon} />
             </button>
           </div>
+
+          {error && <p className="text-danger mt-2 mb-0">{error}</p>}
 
           <div className={Style.rememberwrap}>
             <input type="checkbox" id="remember" />
             <label htmlFor="remember">Remember me on this device</label>
           </div>
 
-          <button className={Style.btnlogin}>
-            <span>Login</span>
+          <button className={Style.btnlogin} disabled={isSubmitting}>
+            <span>{isSubmitting ? 'Logging in...' : 'Login'}</span>
             <FontAwesomeIcon icon={faRightToBracket} className={Style.loginIcon} />
           </button>
 
@@ -91,6 +138,8 @@ export default function Login() {
             <a href="#">Terms</a>
           </div>
         </div>
+      </form>
+
       </div>
     </div>
   )

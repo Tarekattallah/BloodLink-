@@ -4,6 +4,7 @@
 // import heroImg from './assets/hero.png'
 import './App.css'
 import Login from './pages/Login/Login'
+// import Step1 from './pages/Registration/Step1'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <Login/>
+      {/* <Step1/> */}
     </>
   )
 }

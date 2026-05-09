@@ -1,0 +1,13 @@
+.main {
+    height: 100dvh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.leftside {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--red);
+}
