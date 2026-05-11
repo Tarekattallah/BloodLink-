@@ -2,6 +2,7 @@
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .leftside {
@@ -10,14 +11,51 @@
     height: 100%;
     overflow: hidden;
     background-color: var(--red);
+    padding: .6rem 2.4rem 2.2rem
 }
 
 .brand{
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-top: 30px;
     color: white;
     font-size: 1.3rem;
     font-family: 'DM Serif Display', serif;
     letter-spacing: 1px;
+}
+
+.leftContainer{
+    color: white;
+    margin-top: 3rem;
+}
+
+.comment{
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 14px;
+    padding: 1.2rem 1.3rem;
+    backdrop-filter: blur(4px);
+}
+
+.comment blockquote{
+    font-style: italic;
+    font-size: .88rem;
+    color: rgba(255,255,255,.92);
+    margin: 0 0 1rem;
+}
+
+.commentuser {
+    gap: 10px;
+    color: white;
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .main { flex-direction: column; max-width: 100%; }
+    .leftside { width: 100%; padding: 2rem 1.8rem 1.8rem; }
+    .leftside::before { display: none; }
+    .leftContainer h1 { font-size: 2rem; }
+    .right-panel { padding: 2rem 1.8rem 1.8rem; }
 }

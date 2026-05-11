@@ -350,6 +350,7 @@
 
 .registerLink:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .footerLinks {
