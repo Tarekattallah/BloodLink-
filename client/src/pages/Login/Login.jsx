@@ -29,7 +29,7 @@ export default function Login() {
     try {
       setIsSubmitting(true)
       const response = await api.post("users/login", {
-        Username: Email.trim(),
+        Email: Email.trim(),
         PasswordHash: password,
       })
 
@@ -129,7 +129,7 @@ export default function Login() {
           </div>
 
           <p className={Style.registerText}>
-            Don&apos;t have an account? <a href="#" className={Style.registerLink}>Register now</a>
+            Don&apos;t have an account? <a onClick={() => navigate('/registration')} className={Style.registerLink}>Register now</a>
           </p>
 
           <div className={Style.footerLinks}>
