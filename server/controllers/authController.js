@@ -27,7 +27,7 @@ const register = async (req, res, next) => {
             {expiresIn: "7d"}
         );
 
-        res.status(201).josn({
+        res.status(201).json({
             message: "Account created successfully",
             token,
             user: {
@@ -47,7 +47,7 @@ const login = async (req, res, next) => {
     try {
         const {email, password} = req.body;
 
-        const user = await User.fondOne({email});
+        const user = await User.findOne({email});
         if (!user)
             return res.status(401).json({message: "Invalid email or password"});
 
