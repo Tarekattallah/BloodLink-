@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../../assets/Icon.png'
 
 function CreateAccountStep3() {
+  // start logic
+  const [formData, setFormData] = useState({
+    homeAddress: "",
+    donationCenter: "",
+    smsAlerts: false,
+    newsLetter: false
+  });
+
+  const changeHandler = (e)=>{
+    const {id, value, type, checked}= e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: type === 'checkbox' ? checked : value,
+    }));
+  }
+
+  const handleSubmit = (e) => {
+  e.preventDefault(); 
+  console.log("Data to be sent to API:", formData);
+  // end logic
+ 
+};
   return (
     <div className='container-fluid vh-100 p-0 overflow-hidden'>
       <div className="row g-0 h-100">
@@ -32,7 +54,7 @@ function CreateAccountStep3() {
         {/*   right side */}
         <div className="col-7 bg-white">
          
-          <div className=" container d-flex flex-column py-5 px-2 h-100 justify-content-between mx-auto" style={{ maxWidth: '500px' }}>
+          <form onSubmit={handleSubmit} className=" container d-flex flex-column py-5 px-2 h-100 justify-content-between mx-auto" style={{ maxWidth: '500px' }}>
           <div className="d-flex flex-column py-5  h-100 justify-content-around " style={{ maxWidth: '500px' }}>
             
             {/* Header: Step Info and Progress Bar */}
@@ -60,7 +82,7 @@ function CreateAccountStep3() {
                 <span className="input-group-text bg-light border-end-0 text-secondary">
                     <i className="bi bi-geo-alt"></i>
                 </span>
-                <input type="text" className="form-control bg-light border-start-0 ps-0" placeholder='123 Health Ave, Medical District' />
+                <input type="text" id = "homeAddress" value={formData.homeAddress} onChange={changeHandler} className="form-control bg-light border-start-0 ps-0" placeholder='123 Health Ave, Medical District' />
               </div>
             </div>
 
@@ -71,9 +93,9 @@ function CreateAccountStep3() {
                 <span className="input-group-text bg-light border-end-0 text-secondary">
                     <i className="bi bi-hospital"></i>
                 </span>
-                <select className="form-select bg-light border-start-0 ps-0 text-secondary">
-                  <option defaultValue>Select your nearest center</option>
-                  <option>Cairo Medical center</option>
+                <select id= "donationCenter" value={formData.donationCenter} onChange={changeHandler} className="form-select bg-light border-start-0 ps-0 text-secondary">
+                  <option value="">Select your nearest center</option>
+                  <option value="cairo">Cairo Medical center</option>
                 </select>
               </div>
             </div>
@@ -87,10 +109,10 @@ function CreateAccountStep3() {
             {/* Preference Card 1: SMS */}
             <div className="p-2 mb-2 rounded-3 d-flex align-items-start gap-3" style={{backgroundColor: '#f8f9fa', border:'1px solid #eee'}}>
               <div className="form-check mt-1 ms-2">
-                <input className="form-check-input" type="checkbox" id="sms"/>
+                <input id="smsAlerts" checked={formData.smsAlerts} onChange={changeHandler} className="form-check-input" type="checkbox"/>
               </div>
               <div>
-                <label htmlFor="sms" className='fw-bold d-block mb-0' style={{fontSize:'0.9rem'}}>Emergency SMS Alerts</label>
+                <label htmlFor="smsAlerts" className='fw-bold d-block mb-0' style={{fontSize:'0.9rem'}}>Emergency SMS Alerts</label>
                 <small className='text-muted' style={{fontSize:'0.75rem'}}>Receive urgent notifications when your blood type is in demand.</small>
               </div>
             </div>
@@ -98,17 +120,17 @@ function CreateAccountStep3() {
             {/* Preference Card 2: Newsletter */}
             <div className="p-2 mb-3 rounded-3 d-flex align-items-start gap-3" style={{backgroundColor: '#f8f9fa', border:'1px solid #eee'}}>
               <div className="form-check mt-1 ms-2">
-                <input type="checkbox" id="news" className="form-check-input" />                  
+                <input id="newsLetter" checked={formData.newsLetter} onChange={changeHandler} type="checkbox" className="form-check-input" />                  
               </div>
               <div>
-                <label htmlFor="news" className="fw-bold d-block mb-0" style={{fontSize:'0.9rem'}}>Health Newsletter</label>
+                <label htmlFor="newsLetter" className="fw-bold d-block mb-0" style={{fontSize:'0.9rem'}}>Health Newsletter</label>
                 <small className="text-muted" style={{fontSize:'0.75rem'}}>Monthly insights on nutrition and the impact of your contributions.</small>
               </div>
             </div>
 
             {/* Submission Actions */}
             <div className="action-buttons d-flex flex-column mt-2">
-                <button className="btn fw-bold py-2 text-white mb-2" style={{ backgroundColor: '#a0101b', borderRadius: '8px' }}>
+                <button type='submit' className="btn fw-bold py-2 text-white mb-2" style={{ backgroundColor: '#a0101b', borderRadius: '8px' }}>
                 Complete Registration
                 </button>
 
@@ -125,7 +147,7 @@ function CreateAccountStep3() {
             <p className="text-center text-muted mt-2 mb-0" style={{ fontSize: '0.65rem' }}>
               By completing registration, you agree to BloodLink's <a href="#" className='text-primary'>Terms of Service</a> and <a href="#" className='text-primary'>Privacy Policy</a>.
             </p>
-          </div> 
+          </form> 
         </div>
       </div>
     </div>
