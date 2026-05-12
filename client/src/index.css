@@ -1,4 +1,10 @@
 :root {
   --red:#C0111F;
-  --red-dark:   #960D18;
+  --red-dark:#960D18;
+  --red-deep:   #B71C1C;
+  --red-bright: #D32F2F;
+  --muted: #7A6060;
+  --black: #1A0505;
+  --panel-bg:   #FAFAFA;
+  --border:     #E2D5D5;
 }
