@@ -1,0 +1,27 @@
+.textCon h1 {
+    font-size: 16px;
+    line-height: 24px;
+    color: #1A1C1C;
+    font-weight: normal;
+}
+
+.textCon p {
+    color: var(--brown);
+    max-width: 672px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.firstCard {
+    border: 1px solid var(--shallow-red);
+    padding: 24px;
+    height: 202px;
+    width: 270px;
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+}
+
+.secondCard {
+    height: 222.35px;
+    width: 270px;
+}
