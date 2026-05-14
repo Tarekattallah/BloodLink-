@@ -3,9 +3,34 @@
     width: 256px;
     border-right: 1px solid var(--shallow-red);
     color: var(--brown);
+    margin-top: 80px;
+    position: sticky;
+    top: 0;
 }
 
 
 .controlCon {
     border-top: 1px solid var(--shallow-red);
+    padding: 12px 12px 0 12px;
+}
+
+.textCon span:first-of-type {
+    color: var(--wine-red);
+}
+
+.navItem, .controlItem {
+    width: 90%;
+    height: 48px;
+    border-radius: 12px;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+.controlItem {
+    text-decoration: none;
+    color: var(--brown);
+}
+
+.navItem:hover, .controlItem:hover {
+    background: var(--shallow-red);
+    color: var(--red);
 }

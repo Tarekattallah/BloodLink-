@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import Styles from './Sidebar.module.css'
 
 export default function Sidebar() {
@@ -11,19 +12,19 @@ export default function Sidebar() {
     ]
 
     return(<>
-        <aside className="sidebarCon">
+        <aside className="sidebarCon bg-secondary-subtle">
             <div className={`${Styles.sideBar} d-flex flex-column justify-content-between py-4`}>
 
                 <div className="firstSection">
-                    <div className="textCon d-flex flex-column mb-5 ps-4">
-                        <span>BloodLink Admin</span>
+                    <div className={`${Styles.textCon} d-flex flex-column mb-5 ps-4`}>
+                        <span className='fw-bold'>BloodLink Admin</span>
                         <span>Central General Hospital</span>
                     </div>
 
                     <div className="navCon ps-4">
 
                         {sideList.map((item, index) => (
-                            <div key={index} className="navItem">
+                            <div key={index} className={`${Styles.navItem} py-2 px-3 d-flex align-items-center gap-2`}>
                                 <i class={`fa-solid ${item.icon}`}></i>
                                 <span>{item.title}</span>
                             </div>
@@ -32,16 +33,16 @@ export default function Sidebar() {
                     </div>
                 </div>
 
-                <div className={`${Styles.controlCon} d-flex flex-column gap-2 ps-5 pt-5`}>
-                    <div className="controlItem">
+                <div className={`${Styles.controlCon} d-flex flex-column gap-2 `}>
+                    <Link to="" className={`${Styles.controlItem} d-flex flex-row gap-2 align-items-center py-2 px-3`}>
                         <i class="fa-solid fa-gear"></i>
                         <span>Settings</span>
-                    </div>
+                    </Link>
 
-                    <div className="controlItem">
+                    <Link to="" className={`${Styles.controlItem} d-flex flex-row gap-2 align-items-center py-2 px-3`}>
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                         <span>Sign Out</span>
-                    </div>
+                    </Link>
                 </div>
 
             </div>

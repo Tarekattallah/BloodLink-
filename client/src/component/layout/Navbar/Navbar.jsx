@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 export default function Navbar() {
     return(<>
-        <nav className={Styles.navCon}>
+        <nav className={`${Styles.navCon} bg-light`}>
             <div className={`d-flex flex-row justify-content-between py-4 px-5`}>
                 <Link to="/" className={Styles.logo}>BloodLink</Link>
                 

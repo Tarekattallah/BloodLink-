@@ -9,7 +9,7 @@ export default function AdminDashboard() {
             
             <Sidebar />
 
-            <main>
+            <main className="w-100">
                 <ImpactHub />
             </main>
 

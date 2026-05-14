@@ -1,3 +1,7 @@
+.mainCon {
+    margin-top: 80px;
+}
+
 .textCon h1 {
     font-size: 16px;
     line-height: 24px;
@@ -24,4 +28,52 @@
 .secondCard {
     height: 222.35px;
     width: 270px;
+    background-color: var(--wine-red);
+    color: #FFF2F0;
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.thirdCard {
+    width: 562px;
+    border: 1px solid var(--shallow-red);
+    border-radius: 12px;
+    background-color: #F3F3F3;
+    padding: 0;
+    overflow: hidden;
+}
+
+.status i {
+    font-size: 8px;
+}
+
+.mapPicCon {
+    width: 100%;
+}
+
+.topContCards {
+    width: 352px;
+}
+
+.contLogo {
+    width: 40px;
+    text-align: center;
+}
+
+.storiesCon {
+    width: 752px;
+}
+
+.storiesTxt i {
+    color: var(--wine-red);
+}
+
+.storiesCard {
+    width: 364px;
+    overflow: hidden;
+}
+
+.imgCon img {
+    width: 100%;
 }
