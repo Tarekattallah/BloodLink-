@@ -1,0 +1,37 @@
+.navCon {
+    height: 80px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    position:fixed;
+    z-index: 9999;
+}
+
+.logo {
+    color: var(--wine-red);
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--brown);
+    font-size: 16px;
+    line-height: 24px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-bottom 0.2s ease, font-weight 0.1s ease;
+    width: 75px;
+    text-align: center;
+}
+
+.link:hover {
+    color: var(--wine-red);
+    border-bottom-color: var(--wine-red);
+    font-weight: bold;
+}
+
+
+.iconLink {
+    color: var(--brown);
+    font-size: 18px;
+}
