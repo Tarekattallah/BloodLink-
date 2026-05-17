@@ -49,8 +49,6 @@ export default function Login() {
     }
   }
 
-
-
   return (
     <div className={`d-flex ${Style.main}`}>
       <div className={Style.leftside}>
