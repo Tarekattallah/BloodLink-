@@ -15,17 +15,19 @@ import AdminDashboard from './pages/AdminDashboard/AdminDashboard'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ImpactHub from './pages/community/ImpactHub'
 
+import MedicalScreening from './pages/MedicalScreening/MedicalScreening'
+
 const router = createBrowserRouter([
-  { path: '/',
+  {
+    path: '/',
     element: <AdminDashboard />,
     children: [
-      {path: "/impact", element: <ImpactHub />}
+      { path: "/dashboard", element: <div>Dashboard</div> },
+      { path: "/impact", element: <ImpactHub /> },
+      { path: "/screening", element: <MedicalScreening /> },
     ]
   },
-  // { path: '/', element: <Login /> },
-  // { path: '/registration', element: <Step1 /> },
 ])
-
 function App() {
   return (
     <RouterProvider router={router} />
