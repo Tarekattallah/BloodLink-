@@ -28,16 +28,17 @@ export default function Login() {
 
     try {
       setIsSubmitting(true)
-      const response = await api.post("users/login", {
-        Email: Email.trim(),
-        PasswordHash: password,
+      const response = await api.post("/api/auth/login", {
+        email: Email.trim(),
+        password: password,
       })
 
       if (response.data) {
         Login(response.data.user)
         localStorage.setItem("token", response.data.token)
 
-        if (response.data.user.Role === "Admin") {
+        if (response.data.user.role === "donor") {
+          console.log(response.data.user);
           navigate('/')
         }
       }
