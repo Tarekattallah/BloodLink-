@@ -12,12 +12,7 @@ connectDB();
 app.use(express.json());
 
 app.use(cors());
-<<<<<<< HEAD
-=======
 
-
->>>>>>> Yahia
-//Routes 
 const authRoutes = require('./routes/authRoutes.js')
 app.use('/api/auth', authRoutes);
 
