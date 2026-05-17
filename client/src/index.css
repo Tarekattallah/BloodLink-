@@ -3,8 +3,14 @@
   --red-dark:#960D18;
   --red-deep:   #B71C1C;
   --red-bright: #D32F2F;
+  --wine-red: #AF101A;
+  --red-deep:   #B71C1C;
+  --red-bright: #D32F2F;
+  --shallow-red: #E4BEBA;
   --muted: #7A6060;
   --black: #1A0505;
   --panel-bg:   #FAFAFA;
   --border:     #E2D5D5;
+  --brown: #5B403D;
+  --shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.05);
 }

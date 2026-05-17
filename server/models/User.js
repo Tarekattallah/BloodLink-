@@ -32,5 +32,8 @@ const UserSchema = new mongoose.Schema({
     },
 }, { timestamps: true });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> Yahia
 module.exports = mongoose.model('User', UserSchema);
