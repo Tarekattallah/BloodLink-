@@ -1,6 +1,6 @@
+import { Outlet } from "react-router";
 import Navbar from "../../component/layout/Navbar/Navbar";
 import Sidebar from "../../component/layout/Sidebar/Sidebar";
-import ImpactHub from './../community/ImpactHub';
 
 export default function AdminDashboard() {
     return(<>
@@ -10,7 +10,7 @@ export default function AdminDashboard() {
             <Sidebar />
 
             <main className="w-100">
-                <ImpactHub />
+                <Outlet />
             </main>
 
         </div>

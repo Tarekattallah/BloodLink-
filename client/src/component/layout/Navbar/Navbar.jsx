@@ -8,15 +8,15 @@ export default function Navbar() {
                 <Link to="/" className={Styles.logo}>BloodLink</Link>
                 
                 <div className={`${Styles.linksCon} d-flex flex-row gap-5`}>
-                    <Link to="/screening" className={Styles.link}>Screening</Link>
-                    <Link to="/Impact" className={Styles.link}>Impact</Link>
-                    <Link to="/Deferrals" className={Styles.link}>Deferrals</Link>
-                    <Link to="/Support" className={Styles.link}>Support</Link>
+                    <Link to="/" className={Styles.link}>Screening</Link>
+                    <Link to="impact" className={Styles.link}>Impact</Link>
+                    <Link to="/" className={Styles.link}>Deferrals</Link>
+                    <Link to="/" className={Styles.link}>Support</Link>
                 </div>
 
                 <div className="logosCon d-flex flex-row gap-4">
-                    <Link to="/notifications" className={Styles.iconLink}><i className="fa-regular fa-bell"></i></Link>
-                    <Link to="/profile" className={Styles.iconLink}><i className="fa-regular fa-circle-user"></i></Link>
+                    <Link to="/" className={Styles.iconLink}><i className="fa-regular fa-bell"></i></Link>
+                    <Link to="/" className={Styles.iconLink}><i className="fa-regular fa-circle-user"></i></Link>
                 </div>
 
             </div>

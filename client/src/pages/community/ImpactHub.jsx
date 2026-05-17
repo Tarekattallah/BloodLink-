@@ -15,7 +15,7 @@ export default function ImpactHub() {
             </div>
 
                 <div className="firstCardsCon row d-flex flex-row justify-content-around align-items-start gap-3">
-                    <div className={`${Styles.firstCard} col-3 d-flex flex-column justify-content-between`}>
+                    <div className={`${Styles.firstCard} d-flex flex-column justify-content-between`}>
                         <div className="cardItem d-flex flex-column gap-2">
                             <i class="fa-solid fa-droplet text-danger"></i>
                             <span>TOTAL PINTS DONATED</span>
