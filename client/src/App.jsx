@@ -1,7 +1,12 @@
+
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AdminDashboard from './pages/AdminDashboard/AdminDashboard'
 import ImpactHub from './pages/community/ImpactHub'
 import Step1 from './pages/Registration/Step1'
+
+// import { useState } from 'react'
+// import CreateAccountStep3 from './Pages/auth/CreateAccountStep3'
+
 import './App.css'
 import Login from './pages/auth/Login'
 
@@ -18,7 +23,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <RouterProvider router={router} />
-  )
+    //  <CreateAccountStep3/>
+    
+  );
 }
 
-export default App
+export default App;
