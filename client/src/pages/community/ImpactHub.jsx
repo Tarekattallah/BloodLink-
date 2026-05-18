@@ -46,7 +46,6 @@ export default function ImpactHub() {
                     </div>
                 </div>
 
-
                 <div className="secCardsCon col-12 row d-flex flex-row justify-content-around align-items-start">
                     <div className={`${Styles.topContCards} col-6 d-flex flex-column gap-4 border border-danger border-danger-subtle rounded-3 p-3 bg-secondary-subtle`}>
 
@@ -139,7 +138,6 @@ export default function ImpactHub() {
                     </div>
                 </div>
             </div>
-
         </main>   
     </>)
 }

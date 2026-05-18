@@ -38,8 +38,7 @@ export default function Login() {
         localStorage.setItem("token", response.data.token)
 
         if (response.data.user.role === "donor") {
-          console.log(response.data.user);
-          navigate('/')
+          navigate('/Admin')
         }
       }
     } catch (error) {

@@ -6,13 +6,10 @@ export default function AdminDashboard() {
     return(<>
         <Navbar />
         <div className="d-flex flex-row">
-            
             <Sidebar />
-
             <main className="w-100">
                 <Outlet />
             </main>
-
         </div>
     </>)
 }
