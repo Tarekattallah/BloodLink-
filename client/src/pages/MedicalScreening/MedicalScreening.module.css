@@ -1,0 +1,250 @@
+.mainCon {
+    padding: 24px;
+    padding-top: 80px;
+    background: #f3f3f3;
+    min-height: 100%;
+}
+
+.leftPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Search Card */
+.searchCard {
+    background: #fff;
+    border: 1px solid var(--shallow-red);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.searchLabel {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--brown);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.searchInput {
+    width: 100%;
+    height: 48px;
+    border: 1px solid var(--brown);
+    border-radius: 8px;
+    padding-left: 40px;
+    padding-right: 12px;
+    outline: none;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--brown);
+    font-size: 20px;
+}
+
+.searchBtn {
+    margin-top: 12px;
+    width: 100%;
+    height: 48px;
+    background: #005faf;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 15px;
+    transition: opacity 0.2s;
+}
+
+.searchBtn:hover { opacity: 0.85; }
+
+/* Donor Card */
+.donorCard {
+    background: #fff;
+    border: 1px solid var(--shallow-red);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.donorImg {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.bloodBadge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--wine-red);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.donorName {
+    font-family: 'Manrope', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.donorId {
+    font-size: 14px;
+    color: var(--brown);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+}
+
+.donorMeta {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--brown);
+    margin: 0;
+}
+
+.donorDate { color: #005faf; font-weight: 700; margin: 0; }
+.donorStatus { color: #016619; font-weight: 700; margin: 0; }
+
+/* Right Panel */
+.assessmentCard {
+    background: #fff;
+    border: 1px solid var(--shallow-red);
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.assessmentTitle {
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.caseId {
+    font-size: 14px;
+    color: var(--brown);
+}
+
+/* Vitals */
+.vitalLabel {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--brown);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.vitalInput {
+    height: 48px;
+    background: #f3f3f3;
+    border: 1px solid var(--brown);
+    border-radius: 8px;
+    padding: 0 16px;
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+}
+
+/* Checklist */
+.checklistTitle {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.checkItem {
+    background: #f3f3f3;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.checkItem:hover { background: #e8e8e8; }
+
+.checkIcon { color: #005faf; }
+
+.checkTitle { font-weight: 700; font-size: 14px; margin: 0; }
+.checkDesc  { font-size: 13px; color: var(--brown); margin: 0; }
+
+.checkbox {
+    width: 22px;
+    height: 22px;
+    accent-color: var(--wine-red);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Action Bar */
+.actionBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--shallow-red);
+    margin-top: auto;
+}
+
+.actionNote {
+    font-size: 13px;
+    color: var(--brown);
+    max-width: 300px;
+    margin: 0;
+}
+
+.deferBtn {
+    border: 1px solid var(--wine-red);
+    color: var(--wine-red);
+    background: white;
+    border-radius: 8px;
+    font-weight: 700;
+    height: 48px;
+    padding: 0 28px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.deferBtn:hover { background: #ffdad6; }
+
+.authorizeBtn {
+    background: var(--wine-red);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    height: 48px;
+    padding: 0 28px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.authorizeBtn:hover { opacity: 0.85; }

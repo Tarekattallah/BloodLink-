@@ -35,3 +35,8 @@
     color: var(--brown);
     font-size: 18px;
 }
+.activeLink {
+    font-weight: bold;
+    border-bottom: 2px solid #af101a;
+    color: #af101a;
+}
