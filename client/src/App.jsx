@@ -11,6 +11,7 @@ import './App.css'
 // =======
 import AdminDashboard from './pages/AdminDashboard/AdminDashboard'
 // import Step1 from './pages/Registration/Step1'
+import EligibilityAdmin from './pages/EligibilityAdmin/EligibilityAdmin'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ImpactHub from './pages/community/ImpactHub'
@@ -19,7 +20,8 @@ const router = createBrowserRouter([
   { path: '/',
     element: <AdminDashboard />,
     children: [
-      {path: "/impact", element: <ImpactHub />}
+      {path: "/impact", element: <ImpactHub />},
+      { path: "/eligibility", element: <EligibilityAdmin /> },
     ]
   },
   // { path: '/', element: <Login /> },
