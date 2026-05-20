@@ -1,5 +1,5 @@
 import Styles from './Navbar.module.css'
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
     return(<>
@@ -8,7 +8,7 @@ export default function Navbar() {
                 <Link to="/" className={Styles.logo}>BloodLink</Link>
                 
                 <div className={`${Styles.linksCon} d-flex flex-row gap-5`}>
-                    <Link to="/" className={Styles.link}>Screening</Link>
+                    <Link to="/screening" className={Styles.link}>Screening</Link>
                     <Link to="impact" className={Styles.link}>Impact</Link>
                     <Link to="/" className={Styles.link}>Deferrals</Link>
                     <Link to="/" className={Styles.link}>Support</Link>

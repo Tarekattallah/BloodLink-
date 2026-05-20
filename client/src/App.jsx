@@ -1,31 +1,22 @@
 import './App.css'
-// import Login from './pages/auth/Login'
-// <<<<<<< HEAD
-// import Step1 from './pages/Registration/Step1'
-
-// import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-
-// const router = createBrowserRouter([
-//   { path: '/', element: <Login /> },
-//   { path: '/registration', element: <Step1 /> },
-// =======
-import AdminDashboard from './pages/AdminDashboard/AdminDashboard'
-// import Step1 from './pages/Registration/Step1'
-import EligibilityAdmin from './pages/EligibilityAdmin/EligibilityAdmin'
-
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+import AdminDashboard from './pages/AdminDashboard/AdminDashboard'
 import ImpactHub from './pages/community/ImpactHub'
+import EligibilityAdmin from './pages/EligibilityAdmin/EligibilityAdmin'
+import MedicalScreening from './pages/MedicalScreening/MedicalScreening'
 
 const router = createBrowserRouter([
-  { path: '/',
+  {
+    path: '/',
     element: <AdminDashboard />,
     children: [
-      {path: "/impact", element: <ImpactHub />},
-      { path: "/eligibility", element: <EligibilityAdmin /> },
+      { path: '/dashboard',   element: <div>Dashboard</div> },
+      { path: '/impact',      element: <ImpactHub /> },
+      { path: '/eligibility', element: <EligibilityAdmin /> },
+      { path: '/screening',   element: <MedicalScreening /> },
     ]
   },
-  // { path: '/', element: <Login /> },
-  // { path: '/registration', element: <Step1 /> },
 ])
 
 function App() {
