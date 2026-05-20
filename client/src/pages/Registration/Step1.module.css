@@ -1,0 +1,369 @@
+.main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 41.75% 58.25%;
+  background: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.leftside {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background: linear-gradient(180deg, #cf2427 0%, #c61f22 100%);
+  padding: 30px 22px 16px;
+}
+
+.leftside::after {
+  content: '';
+  position: absolute;
+  right: -72px;
+  bottom: 96px;
+  width: 184px;
+  height: 244px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 60% 60% 55% 55% / 38% 38% 62% 62%;
+  transform: rotate(10deg);
+}
+
+.brand {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: 'DM Serif Display', serif;
+}
+
+.brand img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.leftContainer {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  margin-bottom: auto;
+  max-width: 320px;
+  color: #ffffff;
+}
+
+.leftContainer h1 {
+  margin: 0 0 18px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 3.35rem;
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.leftContainer p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.72;
+  color: rgba(255, 244, 244, 0.96);
+}
+
+.comment {
+  position: relative;
+  z-index: 1;
+  max-width: 314px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 18px 18px 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.comment blockquote {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 0.87rem;
+  line-height: 1.65;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.commentuser {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.commentuser img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+}
+
+.rightside {
+  display: flex;
+  align-items: center;
+  background: #fffdfd;
+  padding: 28px 26px 18px 36px;
+}
+
+.formShell {
+  width: min(100%, 448px);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.stepbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid #eadede;
+  padding-bottom: 14px;
+  margin-bottom: 22px;
+}
+
+.steplabel {
+  position: relative;
+  color: #c61f22;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.steplabel::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  width: 74px;
+  height: 2px;
+  border-radius: 999px;
+  background: #d41f25;
+}
+
+.steptitle {
+  color: #8f7272;
+  font-size: 0.93rem;
+  line-height: 1.2;
+}
+
+.formintro {
+  margin-bottom: 22px;
+}
+
+.formintro h2 {
+  margin: 0 0 8px;
+  color: #170506;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.formintro p {
+  margin: 0;
+  color: #8d7272;
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.formlabel {
+  margin-bottom: 8px;
+  color: #190607;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.formcontrol {
+  width: 100%;
+  min-height: 36px;
+  border: 1px solid #ead9d9;
+  border-radius: 10px;
+  background: #fffafa;
+  padding: 9px 12px;
+  color: #1d090a;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.formcontrol::placeholder {
+  color: #d1bcbc;
+}
+
+.formcontrol:focus {
+  outline: none;
+  border-color: #d42126;
+  box-shadow: 0 0 0 3px rgba(212, 33, 38, 0.08);
+  background: #ffffff;
+}
+
+.dateInput {
+  color-scheme: light;
+}
+
+.hinttext {
+  color: #a28686;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  margin-top: 4px;
+  flex-shrink: 0;
+  accent-color: #ca1f23;
+}
+
+.checkboxLabel {
+  color: #735e5e;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.checkboxLabel a {
+  color: #d42126;
+  text-decoration: none;
+}
+
+.checkboxLabel a:hover {
+  text-decoration: underline;
+}
+
+.btnnext {
+  min-height: 42px;
+  margin-top: 2px;
+  width: 100%;
+  border: 0;
+  border-radius: 11px;
+  background: #c81d22;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.97rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(200, 29, 34, 0.28);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.btnnext:hover {
+  background: #cf2228;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(200, 29, 34, 0.3);
+}
+
+.btnnext svg {
+  transition: transform 0.18s ease;
+}
+
+.btnnext:hover svg {
+  transform: translateX(3px);
+}
+
+.loginlink {
+  margin: 14px 0 0;
+  text-align: center;
+  color: #8e7373;
+  font-size: 0.92rem;
+}
+
+.linkButton {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: #d42126;
+  font: inherit;
+  cursor: pointer;
+}
+
+.linkButton:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .leftside {
+    min-height: 360px;
+    padding: 28px 20px 20px;
+  }
+
+  .leftContainer {
+    margin: 44px 0 56px;
+  }
+
+  .leftContainer h1 {
+    font-size: 2.6rem;
+  }
+
+  .comment {
+    max-width: 100%;
+  }
+
+  .rightside {
+    padding: 24px 18px 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .leftContainer h1 {
+    font-size: 2.15rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .stepbar {
+    gap: 12px;
+  }
+
+  .steptitle {
+    font-size: 0.86rem;
+  }
+
+  .checkboxLabel,
+  .loginlink {
+    font-size: 0.88rem;
+  }
+}
